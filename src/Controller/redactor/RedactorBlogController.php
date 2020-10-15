@@ -61,7 +61,7 @@ class RedactorBlogController extends AbstractController
                 $manager->flush();
                 $this->addFlash(
                     'success',
-                    'La blog a bien été ajoutée'
+                    'L\'article a bien été ajoutée'
                 );
             }
             else{
