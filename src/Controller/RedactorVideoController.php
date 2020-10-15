@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Video;
+use App\Form\VideoFormType;
 use App\Repository\VideoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -73,8 +74,8 @@ class RedactorVideoController extends AbstractController
             return $this->redirectToRoute('redactor_videos');
         }
 
-        return $this->render('redactor/redactorForm.twig', [
-            'formVideo' => $form->createView(),
+        return $this->render('redactor/redactor_form.html.twig', [
+            'form' => $form->createView(),
             'formName' => 'Ajouter une vidéo youtube'
         ]);
     }
@@ -100,8 +101,8 @@ class RedactorVideoController extends AbstractController
             return $this->redirectToRoute('redactor_videos');
         }
 
-        return $this->render('redactor/redactorForm.twig', [
-            'formVideo' => $form->createView(),
+        return $this->render('redactor/redactor_form.html.twig', [
+            'form' => $form->createView(),
             'formName' => 'Modifier une vidéo youtube'
         ]);
     }

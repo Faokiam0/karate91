@@ -74,8 +74,8 @@ class RedactorBlogController extends AbstractController
             return $this->redirectToRoute('redactor_blogs');
         }
 
-        return $this->render('redactor/redactorForm.twig', [
-            'formBlog' => $form->createView(),
+        return $this->render('redactor/redactor_form.html.twig', [
+            'form' => $form->createView(),
             'formName' => 'Ajouter un article'
         ]);
     }
@@ -101,8 +101,8 @@ class RedactorBlogController extends AbstractController
             return $this->redirectToRoute('redactor_blogs');
         }
 
-        return $this->render('redactor/redactorForm.twig', [
-            'formBlog' => $form->createView(),
+        return $this->render('redactor/redactor_form.html.twig', [
+            'form' => $form->createView(),
             'formName' => 'Modifier un article'
         ]);
     }
