@@ -73,8 +73,9 @@ class RedactorVideoController extends AbstractController
             return $this->redirectToRoute('redactor_videos');
         }
 
-        return $this->render('redactor/video/videoForm.html.twig', [
-            'formVideo' => $form->createView()
+        return $this->render('redactor/redactorForm.twig', [
+            'formVideo' => $form->createView(),
+            'formName' => 'Ajouter une vidéo youtube'
         ]);
     }
 
@@ -99,8 +100,9 @@ class RedactorVideoController extends AbstractController
             return $this->redirectToRoute('redactor_videos');
         }
 
-        return $this->render('redactor/video/videoForm.html.twig', [
-            'formVideo' => $form->createView()
+        return $this->render('redactor/redactorForm.twig', [
+            'formVideo' => $form->createView(),
+            'formName' => 'Modifier une vidéo youtube'
         ]);
     }
 }

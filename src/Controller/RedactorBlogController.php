@@ -37,7 +37,7 @@ class RedactorBlogController extends AbstractController
 
         $this->addFlash(
             'danger',
-            'L\'article a bien été supprimée'
+            'L\'article a bien été supprimé'
         );
 
         return $this->redirectToRoute('redactor_blogs');
@@ -61,7 +61,7 @@ class RedactorBlogController extends AbstractController
                 $manager->flush();
                 $this->addFlash(
                     'success',
-                    'L\'article a bien été ajoutée'
+                    'L\'article a bien été ajouté'
                 );
             }
             else{
@@ -74,8 +74,9 @@ class RedactorBlogController extends AbstractController
             return $this->redirectToRoute('redactor_blogs');
         }
 
-        return $this->render('redactor/blog/blogForm.html.twig', [
-            'formBlog' => $form->createView()
+        return $this->render('redactor/redactorForm.twig', [
+            'formBlog' => $form->createView(),
+            'formName' => 'Ajouter un article'
         ]);
     }
 
@@ -100,8 +101,9 @@ class RedactorBlogController extends AbstractController
             return $this->redirectToRoute('redactor_blogs');
         }
 
-        return $this->render('redactor/blog/blogForm.html.twig', [
-            'formBlog' => $form->createView()
+        return $this->render('redactor/redactorForm.twig', [
+            'formBlog' => $form->createView(),
+            'formName' => 'Modifier un article'
         ]);
     }
 }

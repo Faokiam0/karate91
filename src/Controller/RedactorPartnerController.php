@@ -74,8 +74,9 @@ class RedactorPartnerController extends AbstractController
             return $this->redirectToRoute('redactor_partners');
         }
 
-        return $this->render('redactor/partner/PartnerForm.html.twig', [
-            'formPartner' => $form->createView()
+        return $this->render('redactor/redactorForm.html.twig', [
+            'formPartner' => $form->createView(),
+            'formName' => 'Ajouter un partenaire'
         ]);
     }
 
@@ -100,8 +101,9 @@ class RedactorPartnerController extends AbstractController
             return $this->redirectToRoute('redactor_partners');
         }
 
-        return $this->render('redactor/partner/PartnerForm.html.twig', [
-            'formPartner' => $form->createView()
+        return $this->render('redactor/redactorForm.twig', [
+            'formPartner' => $form->createView(),
+            'formName' => 'Modifier un partenaire'
         ]);
     }
 }
