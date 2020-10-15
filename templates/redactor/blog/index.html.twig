@@ -12,9 +12,9 @@
                 <tr>
                     <th scope="col">N°</th>
                     <th scope="col">Titre</th>
-                    <th scope="col" class="d-lg-inline-block d-none">Description</th>
+                    <th scope="col" class="d-lg-block d-none">Description</th>
                     <th scope="col">Date</th>
-                    <th scope="col"></th>
+                    <th scope="col"><a href="{{path('redactor_blogs_create')}}"><i class="fas fa-plus"/></a></th>
                 </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{ article.id }}</td>
                         <td>{{ article.title }}</td>
-                        <td class="d-lg-inline-block d-none">{{ article.content }}</td>
+                        <td class="d-lg-block d-none">{{ article.content }}</td>
                         <td>{{ article.date|date("m/d/Y")}}</td>
                         <td>
                             <a href="{{path('redactor_blogs_update',{id:article.id})}}">
