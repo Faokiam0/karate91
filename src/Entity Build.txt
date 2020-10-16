@@ -1,0 +1,39 @@
+php bin/console make:entity
+
+# Blog
+blog
+
+title
+string
+255
+no
+
+content
+text
+no
+
+date
+datetime
+no
+
+# Youtube
+video
+
+title
+string
+255
+no
+
+decription
+string
+255
+yes
+
+link
+string
+255
+no
+
+date
+datetime
+no
