@@ -18,7 +18,7 @@ class RedactorPartnerController extends AbstractController
     {
         //replace to find 0 to 10 and so on
         $partners = $rep->findAll();
-        return $this->render('redactor/partner/index.html.twig', [
+        return $this->render('redactor/redactor_partner.html.twig', [
             'controller_name' => 'RedactorPartnerController',
             'partners' => $partners
         ]);

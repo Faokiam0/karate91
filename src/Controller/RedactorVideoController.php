@@ -18,7 +18,7 @@ class RedactorVideoController extends AbstractController
     {
         //replace to find 0 to 10 and so on
         $videos = $rep->findAll();
-        return $this->render('redactor/video/index.html.twig', [
+        return $this->render('redactor/redactor_video.html.twig', [
             'controller_name' => 'RedactorVideoController',
             'videos' => $videos
         ]);

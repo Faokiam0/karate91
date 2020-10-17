@@ -18,7 +18,7 @@ class RedactorBlogController extends AbstractController
     {
         //replace to find 0 to 10 and so on
         $blog = $rep->findAll();
-        return $this->render('redactor/blog/index.html.twig', [
+        return $this->render('redactor/redactor_blog.html.twig', [
             'controller_name' => 'RedactorBlogController',
             'blog' => $blog
         ]);
