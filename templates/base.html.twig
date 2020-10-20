@@ -44,15 +44,92 @@
         {% endblock %}
     </head>
     <body>
+    <div class="container">
         {% block body %}
-        <div class="container">
+        
+            
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand d-none d-lg-inline" href="#"><img></img></a>
+                <a class="navbar-brand d-lg-none d-inline" href="#">CSKS 91</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Informations
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="infoDropdown">
+                                <a class="dropdown-item" href="#">Planning</a>
+                                <a class="dropdown-item" href="#">Tarif</a>
+                                <a class="dropdown-item" href="#">Plan d'accès</a>
+                            </div>
+                        </li>                   
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blogs</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="karateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Le Karaté
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="karateDropdown">
+                                <a class="dropdown-item" href="#">Ses Bienfaits</a>
+                                <a class="dropdown-item" href="#">Vidéos Youtubes</a>
+                            </div>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contactez Nous</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Equippez Vous</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
                     <h1>{{ block("title") }}</h1>
                 </div>
             </div>
-        </div>
         {% endblock %}
+        </div>
+        <footer>
+        {% block footer %}
+            <div class="container">
+                </hr>
+                <p>Copyright</p>
+                <a class="" href="#">Contact</a>
+                <a class="" href="#">Mentions légales</a>
+            </div>
+        {% endblock %}
+        </footer>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
