@@ -23,7 +23,7 @@ class Blog
     private $title;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="blob")
      */
     private $content;
 
