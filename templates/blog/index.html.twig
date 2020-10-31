@@ -3,18 +3,21 @@
 {% block title %}Hello BlogController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Noi/Desktop/Philliance/karate91/src/Controller/BlogController.php'|file_link(0) }}">src/Controller/BlogController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Noi/Desktop/Philliance/karate91/templates/blog/index.html.twig'|file_link(0) }}">templates/blog/index.html.twig</a></code></li>
-    </ul>
-</div>
+{{parent()}}
+<ul>
+    {% for line in blogs %}
+        <li>
+            <div class="row">
+                <h3>{{ line.getTitle() }}</h3>
+                <p>Publié le {{ line.getDate()|date('d/m/y') }}</p>
+            </div>
+            <div class ="row">
+            <p>{{ line.getContent() }}</p>
+            </div>
+            <div>
+                <a href="{{ path('blog_render', {slug:line.getSlug()}) }}">Lire</a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
 {% endblock %}
