@@ -19,6 +19,21 @@ class VideoRepository extends ServiceEntityRepository
         parent::__construct($registry, Video::class);
     }
 
+    public function findBySlug($value)
+    {
+        return $this->createQueryBuilder('v')
+            ->andWhere('v.slug = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+            /*
+            ->orderBy('b.id', 'ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()*/
+        ;
+    }
+
     // /**
     //  * @return Video[] Returns an array of Video objects
     //  */

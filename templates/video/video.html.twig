@@ -4,7 +4,7 @@
 
 {% block body %}
   {{parent()}}
-  <h1>{{ blog.title }}</h1>
-  <p>{{ blog.content }}</p>
-  <p>Publié le {{ line.getDate()|date('d/m/y') }}</p>
+  <h1>{{ video.title }}</h1>
+  <p>{{ video.description}}</p>
+  <p>Publié le {{ video.getDate()|date('d/m/y') }}</p>
 {% endblock %}

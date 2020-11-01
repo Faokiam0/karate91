@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VideoController!{% endblock %}
+
+{% block body %}
+{{parent()}}
+<ul>
+    {% for line in videos %}
+        <li>
+            <div class="row">
+                <h3>{{ line.getTitle() }}</h3>
+                <p>Publié le {{ line.getDate()|date('d/m/y') }}</p>
+            </div>
+            <div class ="row">
+            <p>{{ line.getDescription() }}</p>
+            </div>
+            <div>
+                <a href="{{ path('video_render', {slug:line.getSlug()}) }}">Lire</a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
