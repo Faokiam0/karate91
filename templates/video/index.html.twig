@@ -7,7 +7,12 @@
 <ul>
     {% for line in videos %}
         <li>
+            
             <div class="row">
+                <a href="{{ path('video_render', {slug:line.getSlug()}) }}">
+                <iframe width="420" height="315" src="{{ line.getLink() }}">
+                </iframe>
+                </a>
                 <h3>{{ line.getTitle() }}</h3>
                 <p>Publié le {{ line.getDate()|date('d/m/y') }}</p>
             </div>
