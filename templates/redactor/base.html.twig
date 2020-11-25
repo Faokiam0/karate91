@@ -55,36 +55,17 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Informations
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="infoDropdown">
-                                <a class="dropdown-item" href="#">Planning</a>
-                                <a class="dropdown-item" href="#">Tarif</a>
-                                <a class="dropdown-item" href="#">Plan d'accès</a>
-                            </div>
-                        </li>                   
+                    <ul class="navbar-nav mr-auto">            
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Blogs</a>
+                            <a class="nav-link" href="{{path('redactor_blogs')}}">Blogs</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="karateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Le Karaté
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="karateDropdown">
-                                <a class="dropdown-item" href="#">Ses Bienfaits</a>
-                                <a class="dropdown-item" href="#">Vidéos Youtubes</a>
-                            </div>
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{path('redactor_videos')}}">Vidéos Youtubes</a>
                         </li>   
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contactez Nous</a>
+                            <a class="nav-link" href="{{path('redactor_partners')}}">Partenaires</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Equippez Vous</a>
-                        </li>
-                        </ul>
+                    </ul>
                 </div>
             </nav>
 
@@ -97,23 +78,6 @@
         </div>
         <footer>
         {% block footer %}
-            <div class="container bg-light pt-2">
-                <div class="row mx-1">
-                    <div class="col ">
-                        <a class="" href-"#">Accueil</a>
-                    </div>
-                    <div class="col m">
-                        <a class="" href="#">Mentions légales</a>
-                    </div>
-                    <div class="col">
-                        <a class="" href="#">Contact</a>
-                    </div>
-                </div>
-                <hr/>
-                <div class="row mx-1">
-                    <p>{{ copyright|raw }}</p>
-                </div>
-            </div>
         {% endblock %}
         </footer>
         {% block javascripts %}{% endblock %}

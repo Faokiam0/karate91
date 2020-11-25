@@ -6,6 +6,7 @@ use App\Entity\Video;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class VideoFormType extends AbstractType
 {
@@ -16,6 +17,7 @@ class VideoFormType extends AbstractType
             ->add('description')
             ->add('link')
             ->add('date')
+            ->add('save', SubmitType::class, ['label' => 'Valider'])
         ;
     }
 

@@ -6,5 +6,5 @@
   {{parent()}}
   <h1>{{ blog.title }}</h1>
   <p>{{ blog.content }}</p>
-  <p>Publié le {{ line.getDate()|date('d/m/y') }}</p>
+  <p>Publié le {{ blog.getDate()|date('d/m/y') }}</p>
 {% endblock %}

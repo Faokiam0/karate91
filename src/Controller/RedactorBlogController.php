@@ -49,7 +49,8 @@ class RedactorBlogController extends AbstractController
     public function createblog(Request $request)
     {
         $blog = new Blog();
-
+        $now = new \DateTime(null, new \DateTimeZone('France/Paris'));
+        $blog->setDate($now);
         $form = $this->createForm(BlogFormType::class, $blog);
         $form->handleRequest($request);
 
