@@ -19,11 +19,16 @@ class UserFixtures extends Fixture
      {
          $user = new User();
          // ...
- 
+        $user->setEmail('csks91@gmail.com');
         $user->setPassword($this->passwordEncoder->encodePassword(
             $user,
-            'the_new_password'
+            'Kata.2020'
         ));
+        $array = ['ROLE_ADMIN'];
+        $user->setRoles($array);
+
+        $manager->persist($user);
+        $manager->flush();
  
          // ...
      }
