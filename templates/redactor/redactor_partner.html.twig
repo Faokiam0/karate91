@@ -12,7 +12,7 @@
                     <th scope="col">N°</th>
                     <th scope="col">Nom</th>
                     <th scope="col" class="d-lg-block d-none">Lien</th>
-                    <th scope="col">Logo</th>
+                    <th scope="col" >Logo</th>
                     <th scope="col"><a href="{{path('redactor_blogs_create')}}"><i class="fas fa-plus"/></a></th>
                 </tr>
             </thead>
@@ -20,9 +20,10 @@
                 {% for partner in partners %}
                     <tr>
                         <td>{{ partner.id }}</td>
-                        <td>{{ partner.title }}</td>
-                        <td class="d-lg-block d-none">{{ partner.description }}</td>
-                        <td>{{ partner.date|date("m/d/Y")}}</td>
+                        <td>{{ partner.name }}</td>
+                        <td class="d-lg-block d-none">{{ partner.link }}</td>
+                        <td>
+                        <img style="-webkit-user-select: none;margin: auto;" src="{{ asset(partner.icon) }}"></td>
                         <td>
                             <a href="{{partner.link}}">
                                 <!--span class="d-lg-inline-block d-none">Supprimer</span-->

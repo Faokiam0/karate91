@@ -6,6 +6,7 @@ use App\Entity\Partner;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class PartnerFormType extends AbstractType
 {
@@ -15,6 +16,7 @@ class PartnerFormType extends AbstractType
             ->add('name')
             ->add('link')
             ->add('icon')
+            ->add('save', SubmitType::class, ['label' => 'Valider'])
         ;
     }
 
