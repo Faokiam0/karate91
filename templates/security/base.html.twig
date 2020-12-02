@@ -46,7 +46,12 @@
     <body>
     <div class="container">
         {% block body %}
-        
+            {% if app.user %}
+            <div class="mb-3">
+                Vous êtes déjà connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+            </div>
+    
+    
             
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand d-none d-lg-inline" href="#"><img></img></a>
@@ -65,15 +70,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{path('redactor_partners')}}">Partenaires</a>
                         </li>
-                        
+                        {% if app.user %}
+                        <li class="nav-item">
+                            <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                        </li>
+                        {% endif %}
                     </ul>
-                    {% if app.user %}
-                        <span class="nav-item">
-                            <button class="btn nav-link" data-target=".bs-example-modal-sm" data-toggle="modal">Déconnexion</button>
-                        </span>
-                    {% endif %}
                 </div>
             </nav>
+            {% endif %}
 
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
@@ -86,15 +91,6 @@
         {% block footer %}
         {% endblock %}
         </footer>
-        <div tabindex="-1" class="modal bs-example-modal-sm" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <div class="modal-header"><h4>Déconnexion <i class="fa fa-lock"></i></h4></div>
-              <div class="modal-body"><i class="fa fa-question-circle"></i>Voulez-vous vraiment vous déconnecter ?</div>
-              <div class="modal-footer"><a class="btn btn-primary btn-block" href="{{ path('app_logout') }}">Se déconnecter</a></div>
-            </div>
-            </div>
-        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
