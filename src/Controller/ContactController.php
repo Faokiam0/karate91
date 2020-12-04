@@ -13,22 +13,26 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(Request $request)
+    public function contact(Request $request, \Swift_Mailer $mailer)
     {
-        $contact = new Contact();
-
-        $form = $this->createForm(ContactType::class, $contact);
+        $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted()){
             
             if($form->isValid()){
-                $manager = $this->getDoctrine()->getManager();
-                $manager->persist($contact);
-                $manager->flush();
+                $contactFormData = $form->getData();
+                $message = (new \Swift_Message($contactFormData['email']." a envoyez ce message"))
+                ->setFrom('faokiam@gmail.com')
+                ->setTo('fakum.baccam@gmail.com')
+                ->setBody($contactFormData['message'],
+                 'text/plain'
+                );
+
+                $mailer->send($message);
                 $this->addFlash(
                     'success',
-                    'Le partenaire a bien été ajouté'
+                    'Nous avons reçu votre message'
                 );
             }
             else{
