@@ -9,12 +9,25 @@
 </style>
 
 <div class="example-wrapper">
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
     <h1>Hello {{ controller_name }}! ✅</h1>
+    {% if yep %}
+    <h2>Yippee</h2>
+    {% endif %}
+    {% if nope == false %}
+    <h2>Ourah</h2>
+    {% endif %}
 
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/Users/Noi/Desktop/Philliance/karate91/src/Controller/RedactorController.php'|file_link(0) }}">src/Controller/RedactorController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/Users/Noi/Desktop/Philliance/karate91/templates/redactor/index.html.twig'|file_link(0) }}">templates/redactor/index.html.twig</a></code></li>
     </ul>
+    {{form_start(form)}}
+    {{form_widget(form)}}
+    <button class="btn btn-primary" type="submit">Changer de mot de passe</button>
+    {{form_end(form)}}
 </div>
 {% endblock %}
