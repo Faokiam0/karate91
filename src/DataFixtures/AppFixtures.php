@@ -22,7 +22,7 @@ class AppFixtures extends Fixture
         //Video
         $video = new Video();
         $video->setDate(new \DateTime('NOW'));
-        $video->setLink("www.youtube.com");
+        $video->setLink("https://www.youtube.com/embed/a4lX0fKDTD8");
         $video->setDescription('Description de vidéos');
         $video->setTitle('Titre de vidéo');
         //Partner
