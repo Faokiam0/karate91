@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 class ChangePasswordFormType extends AbstractType
 {
@@ -39,6 +40,7 @@ class ChangePasswordFormType extends AbstractType
                 // this is read and encoded in the controller
                 'mapped' => false,
             ])
+            ->add('captcha', CaptchaType::class)
         ;
     }
 

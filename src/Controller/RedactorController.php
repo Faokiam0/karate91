@@ -55,8 +55,13 @@ class RedactorController extends AbstractController
                 return $this->redirectToRoute('redactor');
             }
             else{
-                $error = "Pas bon";
-
+                if (!$this->passwordValidator($newpassword))
+                    $error .= "Veuillez entrer un mot de passe entre 8 et 16 caractère.\n 
+                    Ce mot de passe doit contenir aux moins 1 minuscule, 1 majuscule, 1 chiffre et un caractère spéciaux.\n ";
+                if (!$newpassword2)
+                    $error .= "Veulliez entrer 2 fois le même mot de passe.\n ";
+                if (!$oldpassword)
+                    $error .= "Veulliez entrer l'ancien mot de passe.";
             }
 
             

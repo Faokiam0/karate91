@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 class ChangePasswordType extends AbstractType
 {
@@ -16,6 +17,7 @@ class ChangePasswordType extends AbstractType
             ->add('oldpassword', PasswordType::class)
             ->add('newpassword', PasswordType::class)
             ->add('newpassword2', PasswordType::class)
+            ->add('captcha', CaptchaType::class);
         ;
     }
 }
