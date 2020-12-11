@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 class ContactType extends AbstractType
 {
@@ -23,6 +24,7 @@ class ContactType extends AbstractType
             [
                 'label' => 'Laissez nous un message'
             ])
+            ->add('captcha', CaptchaType::class)
             ->add('save', SubmitType::class,
             [
                 'label' => 'Valider'

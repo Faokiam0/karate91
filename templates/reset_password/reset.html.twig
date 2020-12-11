@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Changement de mot de passe</h1>
-
+    <p>Votre mot de passe doit comporté au moins 1 minuscule, 1 majuscule, 1 chiffre, 1 caractère spécial et avoir une longueur entre 8 et 16 caractères</p>
     {{ form_start(resetForm) }}
         {{ form_row(resetForm.plainPassword) }}
         <button class="btn btn-primary">Réinitialiser le mot de passe</button>

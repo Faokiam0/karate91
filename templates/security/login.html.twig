@@ -7,7 +7,7 @@
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    
+    {{ parent() }}
     {% if app.user == false %}
     <h1 class="h3 mb-3 font-weight-normal">Connectez Vous</h1>
     <div class="form-group">
@@ -32,10 +32,15 @@
     #}
     </div>
     <div class="form-group">
-    <button class="btn btn-lg btn-primary" type="submit">
+        <button class="btn btn-lg btn-primary" type="submit">
         Se Connecter
-    </button>
+        </button>
     </div>
+    <a href="{{path('app_forgot_password_request')}}"><small>Mot de passe oublié</small></a>
     {% endif %}
 </form>
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
 {% endblock %}

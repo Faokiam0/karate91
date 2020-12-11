@@ -4,18 +4,22 @@
 
 {% block body %}
 {{parent()}}
+    <div class="container">
     {% for line in blogs %}
-        <div>
+        <div class="container p-3">
+        </hr>
             <div class="row">
                 <h3>{{ line.getTitle() }}</h3>
                 <p>Publié le {{ line.getDate()|date('d/m/y') }}</p>
             </div>
             <div class ="row">
-            {{ line.getContent() }}
+            {{ line.getContent()|striptags('<img>,<a>,<strong>')|raw }}
             </div>
             <div>
                 <a href="{{ path('blog_render', {slug:line.getSlug()}) }}">Lire</a>
             </div>
         </div>
+        </hr>
     {% endfor %}
+    </div>
 {% endblock %}
