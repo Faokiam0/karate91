@@ -11,13 +11,16 @@ class BlogController extends AbstractController
     /**
      * @Route("/blog", name="blog")
      */
-    public function blogList(BlogRepository $rep)
+    public function blogList(BlogRepository $rep, $max)
     {
-        $array = $rep->findAll();
+        if (is_null($max))
+            $max = 0;
+        $array = $rep->findBy(array(), array('id'=>'DESC'), 20, $max);
 
         return $this->render('blog/index.html.twig', [
             'controller_name' => 'BlogController',
             'blogs' => $array,
+            'max' => $max,
         ]);
     }
 

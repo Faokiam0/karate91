@@ -18,12 +18,11 @@ class BlogRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Blog::class);
     }
-
-    // /**
-    //  * @return Blog[] Returns an array of Blog objects
-    //  */
     
-    public function findBySlug($value)
+    /**
+     * @return Blog Returns a Blog by its slug
+     */
+    public function findBySlug($value) : ? Blog
     {
         return $this->createQueryBuilder('b')
             ->andWhere('b.slug = :val')

@@ -1,6 +1,6 @@
 {% extends 'security/base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -37,6 +37,10 @@
         </button>
     </div>
     <a href="{{path('app_forgot_password_request')}}"><small>Mot de passe oublié</small></a>
+    {% else %}
+    <div class="text-center pt-5">
+        <h2>Vous êtes connecté en tant que {{app.user.email}}</h2>
+    </div>
     {% endif %}
 </form>
 {% endblock %}

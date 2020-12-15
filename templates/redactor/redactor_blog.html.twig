@@ -1,6 +1,6 @@
 {% extends 'redactor/base.html.twig' %}
 
-{% block title %}Éditer vos articles{% endblock %}
+{% block title %}CSKS91 Admin - Éditer vos articles{% endblock %}
 
 {% block body %}
 
@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{ article.id }}</td>
                         <td>{{ article.title }}</td>
-                        <td class="d-lg-block d-none">{{ article.content }}</td>
+                        <td class="d-lg-block d-none">{{ article.content | raw}}</td>
                         <td>{{ article.date|date("m/d/Y")}}</td>
                         <td>
                             <a href="{{path('redactor_blogs_update',{id:article.id})}}">

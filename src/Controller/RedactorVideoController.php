@@ -49,7 +49,7 @@ class RedactorVideoController extends AbstractController
     public function createVideo(Request $request)
     {
         $video = new Video();
-        $now = new \DateTime(null, new \DateTimeZone('France/Paris'));
+        $now = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
         $video->setDate($now);
         $form = $this->createForm(VideoFormType::class, $video);
         $form->handleRequest($request);

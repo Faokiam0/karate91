@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CSKS91 - Page d'accueil{% endblock %}
+{% block title %}CSKS91 - {{blog.getTitle()}}{% endblock %}
 
 {% block body %}
   {{parent()}}
-  <h1>{{ blog.title }}</h1>
   <div>
   {{ blog.content|raw }}
   </div>

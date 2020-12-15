@@ -17,7 +17,7 @@ class RedactorBlogController extends AbstractController
     public function index(BlogRepository $rep)
     {
         //replace to find 0 to 10 and so on
-        $blog = $rep->findAll();
+        $blog = $rep->findBy(array(), array('id'=>'DESC'));
         return $this->render('redactor/redactor_blog.html.twig', [
             'controller_name' => 'RedactorBlogController',
             'blog' => $blog
@@ -49,7 +49,7 @@ class RedactorBlogController extends AbstractController
     public function createblog(Request $request)
     {
         $blog = new Blog();
-        $now = new \DateTime(null, new \DateTimeZone('France/Paris'));
+        $now = new \DateTime(null, new \DateTimeZone('Europe/Paris'));
         $blog->setDate($now);
         $form = $this->createForm(BlogFormType::class, $blog);
         $form->handleRequest($request);
