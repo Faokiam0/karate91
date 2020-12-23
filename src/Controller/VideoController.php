@@ -12,13 +12,16 @@ class VideoController extends AbstractController
     /**
      * @Route("/video/", name="video")
      */
-    public function videoList(VideoRepository $rep)
+    public function videoList(VideoRepository $rep, $max = 0)
     {
-        $array = $rep->findAll();
+        if (is_null($max))
+            $max = 0;
+        $array = $rep->findBy(array(), array('id'=>'DESC'), 20, $max);
 
         return $this->render('video/index.html.twig', [
             'controller_name' => 'videoController',
             'videos' => $array,
+            'max' => $max,
         ]);
     }
 

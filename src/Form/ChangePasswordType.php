@@ -14,10 +14,22 @@ class ChangePasswordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('oldpassword', PasswordType::class)
-            ->add('newpassword', PasswordType::class)
-            ->add('newpassword2', PasswordType::class)
-            ->add('captcha', CaptchaType::class);
+            ->add('oldpassword', PasswordType::class,
+            [
+                'label' => 'Entrez votre ancien mot de passe'
+            ])
+            ->add('newpassword', PasswordType::class,
+            [
+                'label' => 'Entrez votre ancien mot de passe'
+            ])
+            ->add('newpassword2', PasswordType::class,
+            [
+                'label' => 'Entrez votre ancien mot de passe'
+            ])
+            ->add('captcha', CaptchaType::class,
+            [
+                'label' => 'Vérification Captcha  '
+            ]);
         ;
     }
 }

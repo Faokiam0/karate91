@@ -3,7 +3,8 @@
 {% block title %}CSKS91 - Liste des articles{% endblock %}
 
 {% block body %}
-{{parent()}}
+    {{parent()}}
+    <div class="p-3">
     <div class="container">
     {% for line in blogs %}
         <div class="container p-3">
@@ -18,5 +19,14 @@
         </div>
         </hr>
     {% endfor %}
+    <div class="col-1 mx-auto">
+        {% if max is not null and max > 0 %}
+            <button href="{{ path('blog', {max:max-20}) }}"></button>
+        {% endif %}
+        {{ max }}
+        <button href="{{ path('blog', {max:max+20}) }}"></button>
+
+    </div>
+    </div>
     </div>
 {% endblock %}

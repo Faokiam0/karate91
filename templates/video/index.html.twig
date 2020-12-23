@@ -4,6 +4,7 @@
 
 {% block body %}
 {{parent()}}
+    <div class="p-3">
     {% for line in videos %}
         <div>
             <div class="row">
@@ -24,4 +25,13 @@
             </div>
         </div>
     {% endfor %}
+    <div class="col-1 mx-auto">
+        {% if max is not null and max > 0 %}
+            <button href="{{ path('blog', {max:max-20}) }}"></button>
+        {% endif %}
+        {{ max }}
+        <button href="{{ path('blog', {max:max+20}) }}"></button>
+
+    </div>
+    </div>
 {% endblock %}

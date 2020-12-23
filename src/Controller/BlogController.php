@@ -9,9 +9,9 @@ use App\Repository\BlogRepository;
 class BlogController extends AbstractController
 {
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/blog/", name="blog")
      */
-    public function blogList(BlogRepository $rep, $max)
+    public function blogList(BlogRepository $rep, $max = null)
     {
         if (is_null($max))
             $max = 0;
