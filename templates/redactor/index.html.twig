@@ -20,8 +20,17 @@
     <div class="p-3">
     {{form_start(form)}}
     {{form_widget(form)}}
-    <button class="btn btn-primary" type="submit">Changer de mot de passe</button>
+    <div tabindex="-1" class="modal bs-pwd-modal-sm" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header"><h4>Changement de mot de passe <i class="fa fa-lock"></i></h4></div>
+              <div class="modal-body"><i class="fa fa-question-circle"></i>Voulez-vous vraiment changer de mot de passe ?</div>
+              <div class="modal-footer"><button type="submit" class="btn btn-primary btn-block">Valider</button></div>
+            </div>
+            </div>
+    </div>
     {{form_end(form)}}
+    <button class="btn btn-primary nav-link" data-toggle="modal" data-target=".bs-pwd-modal-sm">Changer de mot de passe</button>
     </div>  
 </div>
 {% endblock %}
