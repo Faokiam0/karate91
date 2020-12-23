@@ -32,8 +32,8 @@ class RedactorController extends AbstractController
      */
     public function index(Request $request, UserPasswordEncoderInterface $encoder)
     {
-        $nope = $this->passwordValidator("PASDEMINUS0");
-        $yep = $this->passwordValidator("Valide.2020");
+        //$nope = $this->passwordValidator("PASDEMINUS0");
+        //$yep = $this->passwordValidator("Valide.2020");
 
 
         $user =  $this->getUser();
@@ -72,8 +72,8 @@ class RedactorController extends AbstractController
             'controller_name' => 'RedactorController',
             'form' => $form->createView(),
             'error' => $error,
-            'yep' => $yep,
-            'nope' => $nope,
+            //'yep' => $yep,
+            //'nope' => $nope,
         ]);
     }
 }

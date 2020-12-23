@@ -16,6 +16,7 @@ class ChangePasswordFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('Captcha ', CaptchaType::class)
             ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'first_options' => [
@@ -40,7 +41,6 @@ class ChangePasswordFormType extends AbstractType
                 // this is read and encoded in the controller
                 'mapped' => false,
             ])
-            ->add('captcha', CaptchaType::class)
         ;
     }
 
