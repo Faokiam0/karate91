@@ -102,6 +102,9 @@
     "egulias/email-validator": {
         "version": "2.1.19"
     },
+    "friendsofphp/proxy-manager-lts": {
+        "version": "v1.0.0"
+    },
     "friendsofsymfony/ckeditor-bundle": {
         "version": "2.0",
         "recipe": {
@@ -137,9 +140,6 @@
     },
     "nikic/php-parser": {
         "version": "v4.9.1"
-    },
-    "ocramius/proxy-manager": {
-        "version": "2.7.1"
     },
     "php": {
         "version": "7.4"
@@ -616,9 +616,6 @@
     },
     "twig/twig": {
         "version": "v3.0.5"
-    },
-    "webimpress/safe-writer": {
-        "version": "2.1.0"
     },
     "webmozart/assert": {
         "version": "1.9.1"
