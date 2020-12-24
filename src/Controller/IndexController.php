@@ -18,6 +18,16 @@ class IndexController extends AbstractController
     }
 
     /**
+     * @Route("/mentions-legales", name="legal")
+     */
+    public function legal()
+    {
+        return $this->render('index/legal.html.twig', [
+            'controller_name' => 'IndexController',
+        ]);
+    }
+
+    /**
      * @Route("/blessing", name="blessing")
      */
     public function blessing()
