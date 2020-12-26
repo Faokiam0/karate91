@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\PartnerRepository;
 
 class IndexController extends AbstractController
 {
@@ -34,6 +35,19 @@ class IndexController extends AbstractController
     {
         return $this->render('index/blessing.html.twig', [
             'controller_name' => 'IndexController',
+        ]);
+    }
+
+    /**
+     * @Route("/partner/", name="partner")
+     */
+    public function parnterList(PartnerRepository $rep)
+    {
+        $array = $rep->findAll();
+
+        return $this->render('index/index.html.twig', [
+            'controller_name' => 'IndexController',
+            'parners' => $array,
         ]);
     }
 }
