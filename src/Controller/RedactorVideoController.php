@@ -16,8 +16,7 @@ class RedactorVideoController extends AbstractController
      */
     public function index(VideoRepository $rep)
     {
-        //replace to find 0 to 10 and so on
-        $videos = $rep->findAll();
+        $videos = $rep->findBy(array(), array('id'=>'DESC'));
         return $this->render('redactor/redactor_video.html.twig', [
             'controller_name' => 'RedactorVideoController',
             'videos' => $videos

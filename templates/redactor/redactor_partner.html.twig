@@ -5,6 +5,7 @@
 {% block body %}
 <div class="container">
     {{parent()}}
+    <div class="p-3">
     <h2>Listes des partenaires</h2>
     <table class="table table-bordered table-hover table-sm text-center">
             <thead>
@@ -42,5 +43,6 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
 </div>
 {% endblock %}

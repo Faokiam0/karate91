@@ -6,13 +6,14 @@
 
 <div class="container">
     {{parent()}}
+    <div class="p-3">
     <h2>Listes des articles</h2>
     <table class="table table-bordered table-hover table-sm text-center">
             <thead>
                 <tr>
                     <th scope="col">N°</th>
                     <th scope="col">Titre</th>
-                    <th scope="col" class="d-lg-block d-none">Description</th>
+                    <th scope="col" class="d-sm-block d-none">Description</th>
                     <th scope="col">Date</th>
                     <th scope="col"><a href="{{path('redactor_blogs_create')}}"><i class="fas fa-plus"/></a></th>
                 </tr>
@@ -22,7 +23,7 @@
                     <tr>
                         <td>{{ article.id }}</td>
                         <td>{{ article.title }}</td>
-                        <td class="d-lg-block d-none">{{ article.content | raw}}</td>
+                        <td class="d-sm-block d-none">{{ article.content | raw}}</td>
                         <td>{{ article.date|date("m/d/Y")}}</td>
                         <td>
                             <a href="{{path('redactor_blogs_update',{id:article.id})}}">
@@ -38,5 +39,6 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
 </div>
 {% endblock %}

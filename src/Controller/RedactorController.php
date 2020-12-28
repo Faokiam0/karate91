@@ -11,8 +11,10 @@ use App\Form\ChangePasswordType;
 
 class RedactorController extends AbstractController
 {
-    
-     public static function passwordValidator(String $str) : bool {
+    /**
+     * Check if password valid multiple constraint
+     */
+    public static function passwordValidator(String $str) : bool {
         //check longueur
         if (strlen($str) < 8 || strlen($str) >16)
             return false;
