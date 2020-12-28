@@ -1,11 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CSKS91 - Page d'accueil{% endblock %}
+{% block title %}CSKS91 - {{ video.getTitle() }}{% endblock %}
 
 {% block body %}
   {{parent()}}
   <div class="p-3">
-  <h1>{{ video.getTitle() }}</h1>
   <div class="row">
     <div class="col-5"><iframe width="420" height="315" src="{{video.getLink()}}"></iframe></div>
     <div class="col">
