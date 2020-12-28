@@ -20,11 +20,11 @@ class ChangePasswordType extends AbstractType
             ])
             ->add('newpassword', PasswordType::class,
             [
-                'label' => 'Entrez votre ancien mot de passe'
+                'label' => 'Entrez votre nouveau mot de passe'
             ])
             ->add('newpassword2', PasswordType::class,
             [
-                'label' => 'Entrez votre ancien mot de passe'
+                'label' => 'Entrez votre nouveau mot de passe'
             ])
             ->add('captcha', CaptchaType::class,
             [

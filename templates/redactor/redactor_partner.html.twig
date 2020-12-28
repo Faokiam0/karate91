@@ -12,7 +12,7 @@
                 <tr>
                     <th scope="col">N°</th>
                     <th scope="col">Nom</th>
-                    <th scope="col" class="d-lg-block d-none">Lien</th>
+                    <th scope="col" class="d-sm-block d-none">Lien</th>
                     <th scope="col" >Logo</th>
                     <th scope="col"><a href="{{path('redactor_blogs_create')}}"><i class="fas fa-plus"/></a></th>
                 </tr>
@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{ partner.id }}</td>
                         <td>{{ partner.name }}</td>
-                        <td class="d-lg-block d-none">{{ partner.link }}</td>
+                        <td class="d-sm-block d-none">{{ partner.link }}</td>
                         <td>
                         <img style="-webkit-user-select: none;margin: auto;" src="{{ asset(partner.icon) }}"></td>
                         <td>
