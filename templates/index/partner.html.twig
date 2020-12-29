@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Partenaires{% endblock %}
+
+{% block body %}
+  {{parent()}}
+
+<div class="p-3 m-5">
+    {% for partner in partners %}
+    <a href="{{partner.link}}"><img src="{{partner.icon}}"></img></a>
+    {% endfor %}
+</div>
+{% endblock %}

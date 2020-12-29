@@ -45,9 +45,9 @@ class IndexController extends AbstractController
     {
         $array = $rep->findAll();
 
-        return $this->render('index/index.html.twig', [
+        return $this->render('index/partner.html.twig', [
             'controller_name' => 'IndexController',
-            'parners' => $array,
+            'partners' => $array,
         ]);
     }
 }
