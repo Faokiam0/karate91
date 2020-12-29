@@ -1,0 +1,13 @@
+@font-face {
+    font-family: karateFont;
+    src: url('/font/aAsianNinja.ttf');
+  }
+
+.font-custom {
+    font-family: karateFont
+}
+
+.background-custom {
+    background-image: url('/img/background.png');
+    background-size: contain;
+}

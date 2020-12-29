@@ -9,6 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 class ContactType extends AbstractType
@@ -16,6 +17,10 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('Nom', TextType::class,
+            [
+                'label' => 'Entrez votre Nom'
+            ])
             ->add('email', EmailType::class,
             [
                 'label' => 'Entrez votre adresse email'
