@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CSKS91 - Liste des articles{% endblock %}
+{% block title %}Liste des articles{% endblock %}
 
 {% block body %}
     {{parent()}}
@@ -19,14 +19,14 @@
         </div>
         </hr>
     {% endfor %}
-    <div class="col-1 mx-auto">
+        <div class="col-1 mx-auto">
         {% if max is not null and max > 0 %}
             <button href="{{ path('blog', {max:max-20}) }}"><i class="fa fa-angle-left"></i></button>
         {% endif %}
         {{ max }}
         <button href="{{ path('blog', {max:max+20}) }}"><i class="fa fa-angle-right"></i></button>
 
-    </div>
+        </div>
     </div>
     </div>
 {% endblock %}
