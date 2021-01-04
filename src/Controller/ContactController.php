@@ -13,7 +13,7 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function contact(Request $request, \Swift_Mailer $mailer)
+    public function contact(Request $request,\Swift_Mailer $mailer)
     {
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
@@ -22,8 +22,9 @@ class ContactController extends AbstractController
             
             if($form->isValid()){
                 $contactFormData = $form->getData();
+                
                 $message = (new \Swift_Message($contactFormData['email']." ".$contactFormData['Nom']." a envoyez ce message"))
-                ->setFrom('faokiam@gmail.com')
+                ->setFrom('postmaster@csks91-asso.fr')
                 ->setTo('fakum.baccam@gmail.com')
                 ->setBody($contactFormData['message'],
                  'text/plain'
