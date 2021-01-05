@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         
         {% block meta %}
         <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="generator" content="1&amp;1 IONOS MyWebsite">
 
         <meta name="viewport" content="width=device-width, user-scalable=false;">
         <meta name="format-detection" content="telephone=no"/>
-        <meta name="keywords" content="Informations, Légales"/>
-        <meta name="description" content=", Epinay sous Senart: nos mentions légales"/>
+        <meta name="description" content="Site vitrine CSKS 91"/>
         <meta name="robots" content="index,follow"/>
 
-        <meta property="og:type" content="business.business"/>
-        <meta property="og:url" content="https://www.csks91.com/mentions-légales/"/>
-        <meta property="og:title" content="csks91 ou  karaté à Boussy Saint Antoine ambiance symphatique avec respect du code moral karaté initiation pour les enfants,cours khions katas explications bunkaï pour ados adultes - Mentions légales"/>
-        <meta property="og:description" content=", Epinay sous Senart: nos mentions légales"/> <meta property="og:image"  content="https://www.csks91.com/s/misc/logo.jpg?t=1598695028"/>
         <meta property="business:contact_data:country_name" content="France"/>
         <meta property="business:contact_data:locality" content="Boussy Saint-Antoine"/>
         <meta property="business:contact_data:region" content="500"/>
@@ -47,7 +40,7 @@
     <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light  font-custom">
-            <a class="navbar-brand d-none d-sm-inline" href="{{path('index')}}"><img src="{{asset('img/logo.jpg')}}" alt="CSKS 91"></img></a>
+            <a class="navbar-brand d-none d-sm-inline" href="{{path('index')}}"><img src="{{asset('img/logo.jpg')}}" alt="CSKS 91"></a>
             <a class="navbar-brand d-sm-none d-inline" href="{{path('index')}}">CSKS 91</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -178,7 +171,7 @@
             <div class="container bg-light pt-3">
                 <div class="row mx-1">
                     <div class="col-sm row-xs">
-                        <a class="" href-"{{path('index')}}">Accueil</a>
+                        <a class="" href="{{path('index')}}">Accueil</a>
                     </div>
                     <div class="col-sm row-xs m">
                         <a class="" href="{{path('legal')}}">Mentions légales</a>
@@ -195,7 +188,7 @@
         {% endblock %}
         </footer>
         {% block javascripts %}
-        <script type="text/javascript">
+        <script>
             $(document).ready(function() {
                 $('.carousel').carousel({
                     interval: 2000

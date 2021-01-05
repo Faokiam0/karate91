@@ -8,7 +8,7 @@
     <div class="container">
     {% for line in blogs %}
         <div class="container p-3">
-        </hr>
+        <hr>
             <div class="row">
                 <h5>{{ line.getTitle()}}</h5>
                 <p>Publié le {{ line.getDate()|date('d/m/y') }}</p>
@@ -17,14 +17,14 @@
                 <a href="{{ path('blog_render', {slug:line.getSlug()}) }}">Lire</a>
             </div>
         </div>
-        </hr>
+        <hr>
     {% endfor %}
         <div class="col-1 mx-auto">
         {% if max is not null and max > 0 %}
-            <button href="{{ path('blog', {max:max-20}) }}"><i class="fa fa-angle-left"></i></button>
+            <a class="btn" href="{{ path('blog', {max:max-20}) }}"><i class="fa fa-angle-left"></i></a>
         {% endif %}
         {{ max }}
-        <button href="{{ path('blog', {max:max+20}) }}"><i class="fa fa-angle-right"></i></button>
+        <a class="btn" href="{{ path('blog', {max:max+20}) }}"><i class="fa fa-angle-right"></i></a>
 
         </div>
     </div>

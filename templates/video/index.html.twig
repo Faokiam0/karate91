@@ -27,10 +27,10 @@
     {% endfor %}
     <div class="col-1 mx-auto">
         {% if max is not null and max > 0 %}
-            <button href="{{ path('video', {max:max-20}) }}"><i class="fa fa-angle-left"></i></button>
+            <a class="btn" href="{{ path('video', {max:max-20}) }}"><i class="fa fa-angle-left"></i></a>
         {% endif %}
         {{ max }}
-        <button href="{{ path('video', {max:max+20}) }}"><i class="fa fa-angle-right"></i></button>
+        <a class="btn" href="{{ path('video', {max:max+20}) }}"><i class="fa fa-angle-right"></i></a>
 
     </div>
     </div>
