@@ -29,11 +29,6 @@ class BlogRepository extends ServiceEntityRepository
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
-            /*
-            ->orderBy('b.id', 'ASC')
-            ->setMaxResults(1)
-            ->getQuery()
-            ->getResult()*/
         ;
     }
     
